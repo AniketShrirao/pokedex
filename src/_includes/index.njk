@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <title>{{ settings.sitename }}</title>
+</head>
+<body>
+    <section class= "pokemons-dex">
+        <div class="wrapper">
+            <h1 class ="heading">
+            <a href="/" title="{{ settings.sitename }}">
+                <img src="{{ settings.heading }}" alt="{{ settings.sitename }}">
+            </a>
+            </h1>
+            <ul id="pokedex">
+                {% for pokemon in pokemons %}
+                <li class="card">
+                <figure>
+                <img class="card-image" src="{{ pokemon.image }}" alt="{{ pokemon.name }}">
+                </figure>
+                <h2 class="card-title" data-id="{{ pokemon.id }}">{{ pokemon.name }}</h2>
+                <p class="card-subtitle">Type: {{ pokemon.type }}</p>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+</body>
+</html>

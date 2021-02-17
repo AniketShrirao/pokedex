@@ -1,0 +1,10 @@
+{
+    "sitename": "My Amazing Site",
+    "heading": "/assets/images/logo.png",
+    "pokemons": [
+        "pikachu",
+        "bulbasaur",
+        "charmander",
+        "squirtle"
+    ]
+}
