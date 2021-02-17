@@ -1,3 +1,12 @@
+---
+
+pagination:
+    data:pokemons
+    size:1
+    alias:pokemon
+permalink: "/different/{{ pokemon.name | slug }}/index.html"
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +25,6 @@
             </a>
             </h1>
             <ul id="pokedex">
-                {% for pokemon in pokemons %}
                 <li class="card">
                 <figure>
                 <img class="card-image" src="{{ pokemon.image }}" alt="{{ pokemon.name }}">
@@ -26,7 +34,6 @@
                 </h2>
                 <p class="card-subtitle">Type: {{ pokemon.type }}</p>
                 </li>
-                {% endfor %}
             </ul>
         </div>
     </section>
