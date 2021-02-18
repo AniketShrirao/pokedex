@@ -21,7 +21,7 @@ const fetchPokemon = () => {
             })),
             id: result.id
         }));
-        return pokemon;
+        return (pokemon) ? pokemon : settings.pokemon_default;
     });
 };
 

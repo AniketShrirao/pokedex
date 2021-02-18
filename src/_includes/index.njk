@@ -1,15 +1,15 @@
 ---
 
-indexvalue: 0
+indexvalue: 1
 pagination:
     data: pokemons
-    size: 10
+    size: 12
     alias: pokemons
     href: 
-    next: "…"
-    previous: "…"
-    first: "…"
-    last: "…"
+        next: "…"
+        previous: "…"
+        first: "…"
+        last: "…"
     pageNumber: 0
 hrefs: []
 pages: [] 
@@ -54,11 +54,11 @@ page:
         </div>
     </section>
     <div class="pagination">
-        <a href="{{ pagination.href.previous }}">❮</a>
+        <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous }}">Previous</a>{% else %}<a href="#FIXME" class="disabled">Previous</a>{% endif %}</li>
         {% for i in range( indexvalue , pagination.size) -%}
-            <a href="/{{i}}" class="{% if pagination.pageNumber === i %}active{% endif %}">{{i}}</a>
+            <li><a href="/{{i}}" class="{% if pagination.pageNumber === i %}active{% endif %}">{{i}}</a></li>
         {%- endfor %}
-        <a href="{{ pagination.href.next }}">❯</a>
+        <li>{% if pagination.href.next %}<a href="{{ pagination.href.next }}">Next</a>{% else %}<a href="#FIXME" class="disabled">Next</a>{% endif %}</li>
     </div>
 </body>
 </html>

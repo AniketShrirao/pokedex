@@ -9,5 +9,47 @@
     ],
     "default": {
         "image": "/assets/images/pikachu.png"
-    }
+    },
+    "pokemon_default": {
+        "name": "pikachu",
+        "image": "/assets/images/pikachu.png",
+        "type": "Electric, poison",
+        "stats": [
+            {
+            "name": "hp",
+            "value": 60
+            },
+            {
+            "name": "attack",
+            "value": 62
+            },
+            {
+            "name": "defense",
+            "value": 63
+            },
+            {
+            "name": "special-attack",
+            "value": 80
+            },
+            {
+            "name": "special-defense",
+            "value": 80
+            },
+            {
+            "name": "speed",
+            "value": 60
+            }
+        ],
+        "abilities": [
+            {
+            "hidden": "",
+            "normal": "Static"
+            },
+            {
+            "hidden": "Lightning-Rod",
+            "normal": ""
+            }
+        ],
+        "id": 2
+    } 
 }

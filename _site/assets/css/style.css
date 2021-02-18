@@ -309,6 +309,7 @@ li {
   justify-content: center;
 }
 
+
 .pagination a {
   color: black;
   float: left;
@@ -321,12 +322,18 @@ li {
 
 .pagination a.active {
   background-color: #4caf50;
-  color: white;
   border: 1px solid #4caf50;
+  color: white;
 }
 
 .pagination a:hover:not(.active) {
   background-color: #ddd;
+}
+
+a.disabled {
+  pointer-events: none;
+  color: white;
+  background-color: red;
 }
 
 /*=================================
@@ -425,17 +432,25 @@ tbody {
   width:100%;
 }
 
-th {
-  font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
-  text-align: right;
-  font-weight: 300;
-  text-align: left;
+tr {
+  display: flex;
 }
 
 th,
 td {
   width: 50%;
   padding: 0.25em 0.5em 0;
+  font-size: 20px;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+th.stats-title {
+  font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
+  font-weight: 300;
+  justify-content: end;
 }
 
 .card__abilities {
@@ -447,6 +462,10 @@ td {
   margin-top: 1em;
   flex: 1 0;
   text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card--normal {
@@ -569,6 +588,81 @@ td {
   main styling ends here
 =================================*/
 
+.poke {
+  position: absolute;
+}
+
+.poke:after {
+  content: 'back';
+  z-index: 3;
+  top: -70px;
+  position: absolute;
+  right: -230px;
+  font-family: emoji;
+  font-size: 15px;
+}
+
+.ball {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  animation: bounce ease-in infinite alternate;
+  -webkit-animation: bounce ease-in infinite alternate;
+  z-index: 1;
+  left: 165px;
+  top: -140px;
+  position:absolute;
+  }
+
+.shadow-box {
+  background-color: rgba(0,0,0,.2);
+  height: 10px;
+  width: 100px;
+  border-radius: 50%;
+  position: relative;
+  top: 250px;
+  z-index: 0;
+  animation: shadow ease-in infinite alternate;
+  -webkit-animation: shadow ease-in infinite alternate;
+}
+
+.range-slider {
+  display: flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex; 
+  position: relative;
+  top: 300px;
+  direction: rtl;
+}
+
+.label {
+  font-family: 'Archivo Narrow', sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 0 10px;
+  letter-spacing: 5px;
+}
+
+@keyframes bounce {
+  0% {transform: translateY(0) rotate(-20deg);}
+  100% {transform: translateY(250px) rotate(20deg);}
+}
+
+@-webkit-keyframes bounce {
+  0% {-webkit-transform: translateY(0) rotate(-20deg);}
+  100% {-webkit-transform: translateY(250px) rotate(20deg);}
+}
+
+@keyframes shadow {
+    0% {width: 10px;}
+  100% {width: 120px;}
+}
+
+@-webkit-keyframes shadow {
+    0% {width: 10px;}
+  100% {width: 120px;}
+}
 /*=================================
   footer styling starts here
 =================================*/
