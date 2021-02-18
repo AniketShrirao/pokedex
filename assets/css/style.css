@@ -8,13 +8,87 @@
    v2.0 | 20110126
    License: none (public domain)
    ========================================================================== */
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
-blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
-ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
-dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
-tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
-figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -24,22 +98,35 @@ time, mark, audio, video {
 }
 
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
   display: block;
 }
 
 /* Force scrollbar */
-html { overflow-y: scroll; }
+html {
+  overflow-y: scroll;
+}
 
 /* Align radios and text inputs with their label */
 
-input[type='radio'] { vertical-align: text-bottom; }
+input[type="radio"] {
+  vertical-align: text-bottom;
+}
 
 /* Hand cursor on clickable input elements */
 label,
-input[type='button'],
-input[type='submit'],
+input[type="button"],
+input[type="submit"],
 button {
   cursor: pointer;
 }
@@ -50,7 +137,9 @@ strong {
   font-size: inherit;
 }
 
-em { font-style: italic; }
+em {
+  font-style: italic;
+}
 
 img {
   width: 100%;
@@ -66,8 +155,12 @@ sup {
   line-height: 0;
 }
 
-sup { top: -.7em; }
-sub { bottom: -.25em; }
+sup {
+  top: -0.7em;
+}
+sub {
+  bottom: -0.25em;
+}
 
 /* 1.2. Clear Fix
    ========================== */
@@ -78,8 +171,12 @@ sub { bottom: -.25em; }
   content: " ";
 }
 
-.cf:after { clear: both; }
-.cf { *zoom: 1; }
+.cf:after {
+  clear: both;
+}
+.cf {
+  *zoom: 1;
+}
 
 /*for all*/
 body {
@@ -87,9 +184,9 @@ body {
   font-family: sans-serif;
 }
 
-a { 
+a {
   display: inline-block;
-  text-decoration: none; 
+  text-decoration: none;
 }
 
 li {
@@ -100,7 +197,7 @@ li {
 /*for wrapper*/
 .wrapper {
   max-width: 1360px;
-  width: 86%; 
+  width: 86%;
   margin: 0 auto;
 }
 /*=================================
@@ -109,7 +206,7 @@ li {
 
 #pokedex {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-flow: row;
   flex-wrap: wrap;
   align-items: center;
@@ -130,7 +227,7 @@ li {
   top: -25px;
 }
 
-.card {
+.index-card {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -139,7 +236,7 @@ li {
   padding: 40px;
   background: aquamarine;
   width: 15%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.1s;
   border-radius: 100%;
   background-image: linear-gradient(bottom, #f0f0f0 50%, #ee1515 50%);
@@ -150,7 +247,7 @@ li {
   position: relative;
 }
 
-.card::before {
+.index-card::before {
   position: absolute;
   width: 248px;
   top: 116px;
@@ -158,7 +255,7 @@ li {
   background: black;
 }
 
-.card::after {
+.index-card::after {
   position: absolute;
   width: 9%;
   top: 108px;
@@ -174,17 +271,20 @@ li {
   border-radius: 5px 5px 0 0;
 }
 
-.card:hover {
-  box-shadow: 0 30px 100px 0 rgba(0,0,0,0.4);
+.index-card:hover {
+  box-shadow: 0 30px 100px 0 rgba(0, 0, 0, 0.4);
 }
 
-.card:hover .card-image {
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034), 0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06), 0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086), 0 100px 80px rgba(0, 0, 0, 0.12);
+.index-card:hover .card-image {
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
   border-radius: 100%;
   transition: 1s;
 }
 
-.card:hover figure {
+.index-card:hover figure {
   z-index: 1;
 }
 
@@ -203,20 +303,267 @@ li {
   text-align: center;
 }
 
+.pagination {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination a.active {
+  background-color: #4caf50;
+  color: white;
+  border: 1px solid #4caf50;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
 /*=================================
   Header styling ends here
-=================================*/  
+=================================*/
 
 /*=================================
   main styling starts here
 =================================*/
 
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300,700");
 
+body {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  text-align: center;
+}
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  font-weight: 400;
+}
 
+.card {
+  display: inline-block;
+  width: 35%;
+  padding: 1em;
+  border-radius: 15px;
+  margin: 10px;
+  background: #ddd;
+  text-align: left;
+  box-shadow: 0px 5px 20px -10px #111111;
+  position: relative;
+  transition: 0.4s;
+}
 
+.card img {
+  width: 50%;
+}
 
+.card__caption {
+  background-color: rgba(#ffffff, 0.65);
+  padding: 1em;
+  position: relative;
+  border-radius: 0 0 3px 3px;
+}
+.card__image-container {
+  background-color: rgba(#000000, 0.7);
+  text-align: center;
+  padding: 1em 1em 0;
+  border-radius: 3px 3px 0 0;
+}
 
+.card__type {
+  position: absolute;
+  top: 0;
+  right: 1em;
+  transform: translateY(-50%);
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
+  letter-spacing: 0.1em;
+  padding: 0.25em;
+  line-height: 1;
+  border-radius: 2px;
+  background: #bbbbbb;
+}
+
+.card__label {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.card__name {
+    font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    display: flex;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+.card__stats {
+  margin: 1em 0;
+  width: 100%;
+}
+
+tbody {
+  width:100%;
+}
+
+th {
+  font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
+  text-align: right;
+  font-weight: 300;
+  text-align: left;
+}
+
+th,
+td {
+  width: 50%;
+  padding: 0.25em 0.5em 0;
+}
+
+.card__abilities {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__ability {
+  margin-top: 1em;
+  flex: 1 0;
+  text-transform: capitalize;
+}
+
+.card--normal {
+  background: linear-gradient(110deg, #fdbb2d 0%, #3a1c71 100%);
+  box-shadow: 0px 5px 20px -10px #3a1c71;
+}
+
+.card--normal .card__type {
+  background-color: #c08a53;
+}
+
+.card--water {
+  background: linear-gradient(120deg, #1cb5e0 0%, #000851 100%);
+  box-shadow: 0px 5px 20px -10px #000851;
+}
+
+.card--water .card__type {
+  background-color: #1cb5e0;
+}
+
+.card--electric {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 222, 0, 1) 34%,
+    rgba(232, 255, 153, 1) 83%
+  );
+}
+
+.card--electric .card__type {
+  background-color: #000;
+}
+
+.card--fire {
+  background: linear-gradient(
+    0deg,
+    rgba(199, 24, 0, 1) 10%,
+    rgba(252, 194, 69, 1) 100%
+  );
+}
+
+.card--fire  .card__type {
+  background-color: rgba(199, 24, 0, 1);
+}
+
+.card--psychic {
+  background: linear-gradient(
+    140deg,
+    rgba(255, 167, 249, 1) 0%,
+    rgba(255, 44, 195, 1) 39%,
+    rgba(255, 227, 167, 1) 100%
+  );
+}
+
+.card--psychic .card__type {
+  background: #ff2cc3;
+}
+
+.card--dark,.card--poison {
+  background: linear-gradient(
+    20deg,
+    rgba(25, 25, 25, 1) 0%,
+    rgba(16, 11, 50, 1) 33%,
+    rgba(92, 2, 73, 1) 100%
+  );
+  color: white;
+}
+
+.card--dark .card__type,.card--poison .card__type {
+  background: #5c0249;
+    color: white;
+}
+
+.card--grass {
+  background: linear-gradient(
+    140deg,
+    rgba(196, 218, 61, 1) 0%,
+    rgba(110, 127, 14, 1) 69%,
+    rgba(39, 80, 9, 1) 100%
+  );
+}
+
+.card--grass .card__type {
+  background: #6e7f0e;
+}
+
+.card--ice {
+  background: linear-gradient(
+    230deg,
+    rgba(202, 234, 246, 1) 0%,
+    rgba(160, 234, 241, 1) 46%,
+    rgba(111, 184, 235, 1) 100%
+  );
+}
+
+.card--ice  .card__type {
+  background: #6fb8eb;
+}
+
+.card--fairy {
+  background: linear-gradient(
+    45deg,
+    rgba(255, 230, 240, 1) 0%,
+    rgba(255, 197, 224, 1) 34%,
+    rgba(255, 166, 185, 1) 71%,
+    rgba(255, 138, 149, 1) 100%
+  );
+}
+
+.card--fairy .card__type {
+  background: #ff8a95;
+}
+
+.card:hover {
+  z-index: 5;
+  box-shadow: 0px 13px 30px -15px #000000;
+  transform: translateY(-10px);
+}
 
 /*=================================
   main styling ends here
@@ -224,22 +571,13 @@ li {
 
 /*=================================
   footer styling starts here
-=================================*/ 
+=================================*/
 
-
-
-
-
-
-
- /*=================================
+/*=================================
   footer styling ends here
-=================================*/ 
+=================================*/
 
 /*media query starts*/
 /*media query for 995px starts here*/
 @media only screen and (max-width: 995px) {
-
-
-
-}  
+}

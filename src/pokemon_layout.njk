@@ -1,41 +1,68 @@
 ---
-
 pagination:
-    data:pokemons
-    size:1
-    alias:pokemon
-permalink: "/different/{{ pokemon.name | slug }}/index.html"
+  data: pokemons
+  size: 1
+  alias: pokemon
+permalink: "/pokemons/{{ pokemon.name | slug }}/index.html"
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
     <title>{{ settings.sitename }}</title>
-</head>
-<body>
-    <section class= "pokemons-dex">
-        <div class="wrapper">
-            <h1 class ="heading">
-            <a href="/" title="{{ settings.sitename }}">
-                <img src="{{ settings.heading }}" alt="{{ settings.sitename }}">
-            </a>
-            </h1>
-            <ul id="pokedex">
-                <li class="card">
-                <figure>
-                <img class="card-image" src="{{ pokemon.image }}" alt="{{ pokemon.name }}">
-                </figure>
-                <h2 class="card-title" data-id="{{ pokemon.id }}">
-                    <a href="/different/{{ pokemon.name }}" title="{{ pokemon.name }}">{{ pokemon.name }}</a>
-                </h2>
-                <p class="card-subtitle">Type: {{ pokemon.type }}</p>
-                </li>
-            </ul>
-        </div>
+  </head>
+  <body>
+    <section class="pokemons-dex">
+      <div class="wrapper">
+        <h1 class="heading">
+          <a href="/" title="{{ settings.sitename }}">
+            <img src="{{ settings.heading }}" alt="{{ settings.sitename }}" />
+          </a>
+        </h1>
+        <div class="cards">
+            <figure class="card card--{{pokemon.type[0]}}">
+              <div class="card__image-container">
+                <img
+                  src="{% if pokemon.image %}{{ pokemon.image }}{% else %}{{ settings.default.image }}{% endif %}"
+                  alt="{{ pokemon.name }}"
+                  class="card__image"
+                />
+              </div>
+      
+              <figcaption class="card__caption">
+                <h1 class="card__name">{{ pokemon.name }}</h1>
+      
+                <h3 class="card__type">" {% for type in pokemon.type -%} {{ type }} "{%- endfor -%}</h3>
+      
+                <table class="card__stats">
+                  <tbody>
+                    {% for stat in pokemon.stats -%}
+                    <tr>
+                      <th>{{stat.name }}</th>
+                      <td>{{stat.value }}</td>
+                    </tr>
+                    {%- endfor -%}
+                  </tbody>
+                </table>
+
+                <div class="card__abilities">
+                  <h4 class="card__ability">
+                    <span class="card__label">Ability</span>
+                    {{ pokemon.abilities[0].normal }}
+                  </h4>
+                  <h4 class="card__ability">
+                    <span class="card__label">Hidden Ability</span>
+                    {{ pokemon.abilities[1].hidden }}
+                  </h4>
+                </div>
+              </figcaption>
+            </figure>
+          </div>
+      </div>
     </section>
-</body>
+  </body>
 </html>

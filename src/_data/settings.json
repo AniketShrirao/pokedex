@@ -6,5 +6,8 @@
         "bulbasaur",
         "charmander",
         "squirtle"
-    ]
+    ],
+    "default": {
+        "image": "/assets/images/pikachu.png"
+    }
 }

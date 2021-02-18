@@ -10,7 +10,15 @@ const fetchPokemon = () => {
         const pokemon = results.map( (result) => ({
             name: result.name,
             image:result.sprites['front_default'],
-            type: result.types.map( (type) => type.type.name).join(', '),
+            type: result.types.map( (type) => type.type.name),
+            stats: result.stats.map( (stat) => ({
+                name : stat.stat.name,
+                value : stat.base_stat
+            })),
+            abilities: result.abilities.map( (ability) => ({
+                hidden : (ability.is_hidden) ? ability.ability.name : '',
+                normal : ability.ability.name
+            })),
             id: result.id
         }));
         return pokemon;

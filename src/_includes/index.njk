@@ -1,3 +1,26 @@
+---
+
+indexvalue: 0
+pagination:
+    data: pokemons
+    size: 10
+    alias: pokemons
+    href: 
+    next: "…"
+    previous: "…"
+    first: "…"
+    last: "…"
+    pageNumber: 0
+hrefs: []
+pages: [] 
+page:
+    next: "…" 
+    previous: "…"
+    first: "…"
+    last: "…"
+
+---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,12 +40,12 @@
             </h1>
             <ul id="pokedex">
                 {% for pokemon in pokemons %}
-                <li class="card">
+                <li class="index-card">
                 <figure>
-                <img class="card-image" src="{{ pokemon.image }}" alt="{{ pokemon.name }}">
+                <img class="card-image" src="{% if pokemon.image %}{{ pokemon.image }}{% else %}{{ settings.default.image }}{% endif %}" alt="{{ pokemon.name }}">
                 </figure>
                 <h2 class="card-title" data-id="{{ pokemon.id }}">
-                    <a href="/different/{{ pokemon.name }}" title="{{ pokemon.name }}">{{ pokemon.name }}</a>
+                    <a href="/pokemons/{{ pokemon.name }}" title="{{ pokemon.name }}">{{ pokemon.name }}</a>
                 </h2>
                 <p class="card-subtitle">Type: {{ pokemon.type }}</p>
                 </li>
@@ -30,5 +53,12 @@
             </ul>
         </div>
     </section>
+    <div class="pagination">
+        <a href="{{ pagination.href.previous }}">❮</a>
+        {% for i in range( indexvalue , pagination.size) -%}
+            <a href="/{{i}}" class="{% if pagination.pageNumber === i %}active{% endif %}">{{i}}</a>
+        {%- endfor %}
+        <a href="{{ pagination.href.next }}">❯</a>
+    </div>
 </body>
 </html>
